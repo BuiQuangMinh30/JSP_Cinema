@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://metal.plaf.swing.javax" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://metal.plaf.swing.javax" xmlns:intf="http://metal.plaf.swing.javax" xmlns:tns1="http://beans.java" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://metal.plaf.swing.javax" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://beans.java"/>
+   <element name="propertyChange">
+    <complexType>
+     <sequence>
+      <element name="pce" type="xsd:anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="propertyChangeResponse">
+    <complexType/>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="propertyChangeRequest">
+
+      <wsdl:part element="impl:propertyChange" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="propertyChangeResponse">
+
+      <wsdl:part element="impl:propertyChangeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="MetalLookAndFeel$AATextListener">
+
+      <wsdl:operation name="propertyChange">
+
+         <wsdl:input message="impl:propertyChangeRequest" name="propertyChangeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:propertyChangeResponse" name="propertyChangeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="MetalLookAndFeel$AATextListenerSoapBinding" type="impl:MetalLookAndFeel$AATextListener">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="propertyChange">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="propertyChangeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="propertyChangeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="MetalLookAndFeel$AATextListenerService">
+
+      <wsdl:port binding="impl:MetalLookAndFeel$AATextListenerSoapBinding" name="MetalLookAndFeel$AATextListener">
+
+         <wsdlsoap:address location="http://localhost:8080/Cinema/services/MetalLookAndFeel$AATextListener"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
